@@ -1,5 +1,45 @@
 # CHANGELOG — irreplaceable-you
 
+## v1.4.0（2026-04-09）
+
+### 版本概述
+
+| 项目 | 内容 |
+|------|------|
+| **版本号** | v1.4.0 |
+| **发布日期** | 2026-04-09 |
+| **相对于** | v1.3.0 |
+| **升级文件** | SKILL.md |
+
+---
+
+### 核心修复
+
+| # | 问题 | 修复方式 |
+|---|------|---------|
+| 1 | **SKILL.md 内嵌 Python 错误文本**：Q3-2 区段混入了 `SyntaxError: unterminated triple-quoted string literal` 及 `File "/tmp/append_skill.py"` 代码执行输出 | 删除错误文本，恢复干净引用 |
+| 2 | **meta.json 重复 key**：`"layer3": "layer3": "表达纹理"`（JSON 语法错误） | 删除重复 key，保留正确值 |
+| 3 | **Layer W 子节标题缺失**：QW-2~QW-7 缺少节标题，与 Layer 0-5 格式不一致 | 新增 `##### Layer W — QW-N` 格式标题（QW-2~QW-7），统一结构 |
+| 4 | **版本历史表 v1.3.0 重复**：v1.3.0 出现两次，第二次实为 v1.4.0 | 修正第二处为 v1.4.0，补充本次修复描述 |
+| 5 | **`/irreplaceable-you-diff` 命令体为空**：定义了命令头但无实现步骤 | 补全 7 步实现流程（读取文件→逐层对比→展示差异→用户确认→执行回滚） |
+
+---
+
+### v1.4.0 frontmatter 更新
+
+- `version`：`1.4.0`
+- `changelog`：精简为三行摘要，移除冗余长描述
+
+---
+
+### v1.4.0 文件结构说明更新
+
+`CHANGELOG_v1.5.md` 文件命名沿用旧称（历史上曾计划 v1.5），实际最新版本为 v1.4.0，后续更新将维持此文件。
+
+---
+
+# CHANGELOG — irreplaceable-you
+
 ## v1.1.0（2026-04-08）
 
 ### 版本概述
@@ -410,11 +450,6 @@ colleague-skill 是一个由 titanwings 开发的开源 AI Agent Skill（GitHub 
 | v1.2 → v1.3 | persona.md 质量要求强化 |
 | v1.3 → v1.5 | 重大升级：Layer 0 标签翻译表 + Layer W（跨过 v1.4 是因为引入了全新的 Layer） |
 
----
-
-_本 changelog 为 irreplaceable-you v1.5.0 专用_
-
----
 
 ## v1.2.0（2026-04-07）
 
@@ -535,6 +570,34 @@ _本 changelog 为 irreplaceable-you v1.5.0 专用_
 | manifest.toml | version: 1.3.0 → 1.2.0，summary 更新 |
 | CHANGELOG_v1.5.md | 新增 v1.2.0 节 |
 
----
 
-_本 changelog 为 irreplaceable-you v1.2.0 专用_
+## v1.4.1（2026-04-11）
+
+### 版本概述
+
+| 项目 | 内容 |
+|------|------|
+| **版本号** | v1.4.1 |
+| **发布日期** | 2026-04-11 |
+| **相对于** | v1.4.0 |
+| **升级文件** | SKILL.md、meta.json |
+
+### 核心修复
+
+| # | 问题 | 修复方式 |
+|---|------|---------|
+| 1 | **版本号不对齐**：SKILL.md frontmatter version=1.2.0、meta.json version=1.2.0，但 CHANGELOG 最新条目为 v1.4.0；changelog 字段描述\"v1.2.0 修复截断\"与 CHANGELOG 记录不符（截断修复在 v1.4.0） | 统一 SKILL.md frontmatter version=1.4.1、changelog 字段同步更新；meta.json version→1.4.1 |
+| 2 | **Q3 递进序列断点**：从 Q3-展开（具体行为描述）直接跳到 Q3-提炼（抽象归纳），中间缺少桥接 | 新增 Q3-桥接问题：「那件事里，你最在乎的是什么？那个'只有你会这样做'背后，你坚持的是什么？」 |
+| 3 | **版本历史条目缺失**：SKILL.md 版本历史缺少 v1.4.0 条目，直接从 v1.1.0 跳到 v1.2.0 | 补充 v1.4.0 和 v1.4.1 条目 |
+
+### 文件变更摘要
+
+| 文件 | 变更 |
+|------|------|
+| SKILL.md | version 1.2.0→1.4.1；changelog 字段更新；新增 Q3-桥接；版本历史补全 |
+| meta.json | version 1.2.0→1.4.1 |
+| CHANGELOG_v1.5.md | 追加 v1.4.1 条目 |
+
+### CHANGELOG 文件命名说明
+
+此文件历史上曾计划 v1.5 故命名 CHANGELOG_v1.5.md，实际最新版本为 v1.4.1，后续更新继续沿用此文件，不另改名。
